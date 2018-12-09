@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-transition-group": "^1.2.1",
+    "react-twitter-embed": "^2.0.4",
+    "react-twitter-widgets": "^1.7.1",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },

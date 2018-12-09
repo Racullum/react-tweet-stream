@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Purpose
+This app shows a live stream of all tweets containing 'JavaScript'. This is primarily an app to 
+help me practice the React framework. 
+
+## How to make it work
+
+Run both commands sequentially:
+### 'node src/server/server.js'
+### 'npm start'
+
 ## Available Scripts
 
 In the project directory, you can run:
