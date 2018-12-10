@@ -1,6 +1,6 @@
 import React from 'react';
 import Tweet from './Tweet';
-import './TweetList.css';
+import './css/TweetList.css';
 import socketIOClient from 'socket.io-client';
 
 
@@ -19,15 +19,18 @@ class TweetList extends React.Component {
         socket.on('connect', () => {
             console.log("Connected");
             socket.on("tweets", data => {
-                console.info(data);
-                console.log(data);
 
                 let newtweet = data.id_str;
                 
                 // Making sure we don't add a duplicate into the array 
-                if(!(this.state.tweets.indexOf(newtweet) > -1))
+        
+                if(!(this.state.tweets.includes(newtweet)))
                 {
-                  this.setState({tweets: this.state.tweets.unshift(newtweet)});
+                  const oldstate = this.state.tweets;
+                  oldstate.unshift(newtweet);
+                  const newstate = oldstate;
+                  this.setState({tweets: newstate});
+                  
                 }
                 
             });
@@ -42,6 +45,7 @@ class TweetList extends React.Component {
 
     
   render() {
+
     let tweets = this.state.tweets.map((tweet) =>
       <li key={tweet}>
         <Tweet tweetId={tweet}></Tweet>
