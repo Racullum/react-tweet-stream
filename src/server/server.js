@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config({path: __dirname + '/../.env'});
+const dotenv = require('dotenv').config({path: __dirname + '/../../.env'});
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
@@ -13,10 +13,8 @@ if (dotenv.error) {
 
 const server = http.createServer(app);
 const io = socketio(server);
-
-require('./routes/tweets.js')(app, io);
-
 app.use(bodyParser.json());
+require('./routes/tweets.js')(app, io);
 
 server.listen(port, () => {
     console.log("Listening...");
