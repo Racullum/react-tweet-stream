@@ -13,14 +13,6 @@ class TweetList extends React.Component {
 
 
     componentDidMount() {
-        fetch('/search', {
-          method: 'post',
-          body: JSON.stringify({'search': 'reactjs'}),
-          headers:{
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => console.log(response))
         const socket = socketIOClient('localhost:3001/');
 
         socket.on('connect', () => {
