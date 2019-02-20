@@ -49,12 +49,25 @@ class TweetList extends React.Component {
       <li key={tweet}>
         <Tweet tweetId={tweet}></Tweet>
       </li>
-    );
+    );    
+    
     return(
-      
-      <ul>
-        {tweets}
-      </ul>
+      <div>
+      {
+        this.state.tweets.length > 0 ? 
+        [
+          <ul>
+            {tweets}
+          </ul>
+        ]
+        :
+        [
+          <h1>
+            No Tweets Yet
+          </h1>
+        ]
+      }
+    </div>
     );
   }
 
